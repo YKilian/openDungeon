@@ -1,0 +1,52 @@
+{
+  "map": { "tilesX": 15, "tilesY": 15 },
+
+  "playerStart": { "x": 1, "y": 5 },
+
+  "textures": {
+    "floor": "../assets/floor.png",
+    "wall": "../assets/wall.png"
+  },
+
+  "biomes": [
+    {
+      "name": "sandy",
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 9,
+        "h": 9
+      },
+      "floorTexture": "../assets/sand.png",
+      "wallTexture": "../assets/sandstone.png"
+    },
+    {
+      "name": "moss",
+      "region": { "x": 9, "y": 0, "w": 6, "h": 14 },
+      "floorTexture": "../assets/mossyFloor.png",
+      "wallTexture": "../assets/mossyWall.png"
+    },
+    {
+      "name": "firm",
+      "region": { "x": 0, "y": 9, "w": 15, "h": 6 },
+      "floorTexture": "../assets/darkFloor.png",
+      "wallTexture": "../assets/brickWall.png"
+    }
+  ],
+
+  "walls": [
+    { "x": 0,  "y": 0,  "w": 15, "h": 1 },
+    { "x": 0,  "y": 0,  "w": 1, "h": 15 },
+    { "x": 14,  "y": 0,  "w": 1, "h": 15 },
+    { "x": 0,  "y": 14,  "w": 15, "h": 1 },
+    { "x": 3,  "y": 3,  "w": 1, "h": 3 },
+    { "x": 5,  "y": 3,  "w": 1, "h": 3 },
+    { "x": 7,  "y": 3,  "w": 1, "h": 3 },
+    { "x": 9,  "y": 1,  "w": 1, "h": 2 },
+    { "x": 9,  "y": 6,  "w": 1, "h": 3 },
+    { "x": 1,  "y": 9,  "w": 9, "h": 1 },
+    { "x": 5,  "y": 10,  "w": 1, "h": 3 },
+    { "x": 7,  "y": 11,  "w": 1, "h": 3 },
+    { "x": 9,  "y": 10,  "w": 1, "h": 3 }
+  ]
+}
