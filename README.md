@@ -1,103 +1,82 @@
+<p align="center">
+  <img src="assets/logo.svg" alt="openFM Logo" width="200">
+</p>
+
 # openDungeon
 
-*A 2.5D Top-Down Dungeon Explorer*
+![C++](https://img.shields.io/badge/C%2B%2B-20-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![SFML](https://img.shields.io/badge/SFML-%238CC445.svg?style=for-the-badge&logo=sfml&logoColor=white)
+![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white)
 
-**openDungeon** is a prototype for a 2.5D top-down dungeon exploration game, built with **C++20** and **SFML**. The project features a custom tilt-transformation engine to create an isometric visual effect from 2D coordinates, making it a unique showcase of modern C++ game development techniques.
-
----
-
-## **Project Overview**
-
-### **Key Features**
-
-- **2.5D Isometric Rendering**: Custom tilt-transformation engine for a 3D-like experience.
-- **Modular Design**: Clean separation of game logic, rendering, and data handling.
-- **JSON-Based Configuration**: Map layouts and biome settings are defined in `GameMapConfig.json`.
-- **Cross-Platform**: Supports **Windows** and **Linux** (Ubuntu/Debian).
-
-### **Technologies Used**
-
-
-| Technology        | Purpose                                 |
-| ----------------- | --------------------------------------- |
-| **C++20**         | Core game logic and rendering.          |
-| **SFML**          | Windowing, input, and 2D graphics.      |
-| **nlohmann_json** | JSON parsing for map data.              |
-| **CMake**         | Build system and dependency management. |
-
+**openDungeon** is a 2.5D dungeon exploration prototype built with **C++20** and **SFML**. It features a custom tilt-transformation engine for isometric rendering and is designed to be **easy to build and run** with minimal setup.
 
 ---
 
-## **Setup & Installation**
+## Prerequisites
 
-### **Prerequisites**
+Ensure your system meets the following requirements:
 
-#### **Windows**
+### Linux (Ubuntu/Debian)
 
-- **CLion** (recommended) or **Visual Studio 2022** (with "Desktop development with C++" workload).
-- **CMake** (version 3.16+).
-- **Git** (to clone the repository).
+```bash
+sudo apt-get update
+sudo apt-get install g++ cmake libsfml-dev
+```
 
-#### **Linux (Ubuntu/Debian)**
+### Windows
 
-- **Compiler**: GCC 11 or Clang 13 (C++20 support required).
-- **System Libraries**:
-  ```bash
-  sudo apt-get update
-  sudo apt-get install libx11-dev libxrandr-dev libudev-dev libopengl-dev libflac-dev libvorbis-dev libopenal-dev libxcursor-dev libxinerama-dev
-  ```
+- Install **[CLion](https://www.jetbrains.com/clion/)** or **[Visual Studio 2022](https://visualstudio.microsoft.com/)** (with "Desktop development with C++" workload).
+- Install **[CMake](https://cmake.org/download/)** (version 3.16 or higher).
 
 ---
 
-### **Step-by-Step Build Guide**
+## Quick Start
 
-#### **1. Clone the Repository**
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/openDungeon.git
 cd openDungeon
 ```
 
-#### **2. Configure and Build**
+### 2. Build the Project
 
-- **CLion Users**:
-    - Open the project in CLion.
-    - Select **Release** as the build configuration.
-    - Click the **Build** button (or press **Ctrl+F9**).
-- **Command Line (CMake)**:
-  ```bash
-  cmake -B build -S .
-  cmake --build build --config Release
-  ```
+#### Linux/macOS (Terminal)
 
-#### **3. Prepare the Executable**
+```bash
+mkdir build && cd build
+cmake .. && cmake --build . --config Release
+```
 
-After building, copy the following files/folders to the same directory as the executable (`build/Release/` or `cmake-build-release/`):
+#### Windows (CLion/Visual Studio)
 
-- The `assets/` folder.
-- The `GameMapConfig.json` file.
+1. Open the project in **CLion** or **Visual Studio**.
+2. Select **Release** as the build configuration.
+3. Click **Build** (or press `Ctrl+F9` in CLion).
 
 ---
 
-## **Running the Game**
+### 3. Run the Game
 
-### **Windows**
+After building, the executable (`openDungeon` or `openDungeon.exe`) will be in the `build/` folder.
 
-```bash
-cd build\Release
-openDungeon.exe
-```
-
-### **Linux**
+#### Linux/macOS
 
 ```bash
 cd build
 ./openDungeon
 ```
 
+#### Windows
+
+```bash
+cd build\Release
+openDungeon.exe
+```
+
 ---
 
-## **Controls**
+## Controls
 
 
 | Key/Action       | Function                          |
@@ -109,47 +88,42 @@ cd build
 
 ---
 
-## **Technical Deep Dive**
-
-### **Rendering Engine**
-
-- **Custom Vertex Array System**: Dynamically generates wall faces, shadows, and isometric effects based on tile adjacency.
-- **SFML Integration**: Handles windowing, input, and 2D rendering.
-
-### **Data Management**
-
-- **JSON Configuration**: `GameMapConfig.json` defines map layouts, player start positions, and biome settings.
-- **Modular Design**: Separates game logic, rendering, and data parsing for maintainability.
-
----
-
-## **Troubleshooting**
-
-### **Common Issues & Fixes**
-
-
-| Issue                       | Solution                                                               |
-| --------------------------- | ---------------------------------------------------------------------- |
-| **"Assets Missing"**        | Copy `assets/` and `GameMapConfig.json` to the executable's directory. |
-| **"SFML Not Found"**        | Delete the `build/` folder and reconfigure CMake.                      |
-| **"CMake/Compiler Errors"** | Ensure C++20 support and correct toolchain configuration in CLion.     |
-
-
----
-
-## **Project Structure**
+## Project Structure
 
 ```
 openDungeon/
-├── src/               # C++ source files
-├── include/           # Header files
-├── assets/            # Textures and game assets
+├── src/            # C++ source files
+├── include/        # Header files
+├── assets/         # Textures and game assets
 ├── GameMapConfig.json # Map and biome configurations
-└── CMakeLists.txt     # Build configuration
+└── CMakeLists.txt  # Build configuration
 ```
 
 ---
 
-## **License**
+## Troubleshooting
 
-This project is licensed under the **MIT License**
+### "Assets or Config File Missing"
+
+- Ensure `assets/` and `GameMapConfig.json` are in the same folder as the executable.
+
+### "SFML Not Found"
+
+- Reinstall SFML:
+  ```bash
+  sudo apt-get install libsfml-dev  # Linux
+  ```
+  For Windows, ensure **SFML is correctly linked** in your IDE.
+
+### "CMake/Compiler Errors"
+
+- Delete the `build/` folder and rebuild:
+  ```bash
+  rm -rf build && mkdir build && cd build && cmake .. && make
+  ```
+
+---
+
+## License
+
+This project is licensed under the **MIT License**.
