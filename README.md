@@ -124,6 +124,12 @@ openDungeon/
 
 ---
 
+## Thanks to
+````
+Texture Author: piixl https://piiixl.itch.io/textures?download
+License: CC BY 40.0
+````
+
 ## License
 
 This project is licensed under the **MIT License**.

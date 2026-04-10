@@ -5,20 +5,21 @@
 class Walls {
 public:
     bool load(const WorldConfig& worldConfig,
-              const std::string& defaultWallTexturePath,
-              const std::vector<BiomeData>& biomes);
+        const std::string& defaultWallTexturePath,
+        const std::vector<BiomeData>& biomes);
 
     void addWallTiles(const TileRect& rect);
 
-    void drawBehindPlayer(sf::RenderTarget& target, const sf::RenderStates& worldStates, float playerScreenY);
+    void drawBehindPlayer(sf::RenderTarget& target, const sf::RenderStates& worldStates, sf::Vector2f playerScreenY);
 
-    void drawInFrontOfPlayer(sf::RenderTarget& target, const sf::RenderStates& worldStates, float playerScreenY);
+    void drawInFrontOfPlayer(sf::RenderTarget& target, const sf::RenderStates& worldStates, sf::Vector2f playerScreenY);
 
     bool collidesPixelRect(const sf::FloatRect& playerBounds) const;
 
 private:
     void drawSplitByPlayer(sf::RenderTarget& target,
                            const sf::RenderStates& worldStates,
+                           sf::Vector2f playerScreenPos,
                            bool drawFrontGroup);
 
     bool inBounds(const sf::Vector2i& tile) const;

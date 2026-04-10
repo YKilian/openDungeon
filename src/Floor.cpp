@@ -1,10 +1,11 @@
 #include "Floor.hpp"
 
     bool Floor::load(const WorldConfig& worldConfig,
-              const std::string& defaultFloorTexturePath,
-              const std::vector<BiomeData>& biomes) {
+            const LightData& lightData,
+            const std::string& defaultFloorTexturePath,
+            const std::vector<BiomeData>& biomes) {
 
-        const sf::Color bottomColor(150, 150, 150, 255);
+        const sf::Color bottomColor = lightData.topLightColor;
 
         m_worldConfig = &worldConfig;
 

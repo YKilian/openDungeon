@@ -1,7 +1,7 @@
 {
   "map": { "tilesX": 15, "tilesY": 15 },
 
-  "playerStart": { "x": 1, "y": 5 },
+  "playerStart": { "x": 2, "y": 2 },
 
   "textures": {
     "floor": "../assets/floor.png",
@@ -11,42 +11,45 @@
   "biomes": [
     {
       "name": "sandy",
-      "region": {
-        "x": 0,
-        "y": 0,
-        "w": 9,
-        "h": 9
-      },
+      "region": { "x": 0, "y": 0, "w": 9, "h": 9 },
       "floorTexture": "../assets/sand.png",
       "wallTexture": "../assets/sandstone.png"
     },
     {
       "name": "moss",
-      "region": { "x": 9, "y": 0, "w": 6, "h": 14 },
+      "region": { "x": 9, "y": 0, "w": 6, "h": 15 },
       "floorTexture": "../assets/mossyFloor.png",
       "wallTexture": "../assets/mossyWall.png"
     },
     {
       "name": "firm",
-      "region": { "x": 0, "y": 9, "w": 15, "h": 6 },
+      "region": { "x": 0, "y": 9, "w": 9, "h": 6 },
       "floorTexture": "../assets/darkFloor.png",
       "wallTexture": "../assets/brickWall.png"
     }
   ],
 
   "walls": [
-    { "x": 0,  "y": 0,  "w": 15, "h": 1 },
-    { "x": 0,  "y": 0,  "w": 1, "h": 15 },
-    { "x": 14,  "y": 0,  "w": 1, "h": 15 },
-    { "x": 0,  "y": 14,  "w": 15, "h": 1 },
-    { "x": 3,  "y": 3,  "w": 1, "h": 3 },
-    { "x": 5,  "y": 3,  "w": 1, "h": 3 },
-    { "x": 7,  "y": 3,  "w": 1, "h": 3 },
-    { "x": 9,  "y": 1,  "w": 1, "h": 2 },
-    { "x": 9,  "y": 6,  "w": 1, "h": 3 },
-    { "x": 1,  "y": 9,  "w": 9, "h": 1 },
-    { "x": 5,  "y": 10,  "w": 1, "h": 3 },
-    { "x": 7,  "y": 11,  "w": 1, "h": 3 },
-    { "x": 9,  "y": 10,  "w": 1, "h": 3 }
+    { "x": 0, "y": 0, "w": 15, "h": 1 },
+    { "x": 0, "y": 14, "w": 15, "h": 1 },
+    { "x": 0, "y": 1, "w": 1, "h": 13 },
+    { "x": 14, "y": 1, "w": 1, "h": 13 },
+
+
+    { "x": 4, "y": 2, "w": 1, "h": 1 },
+    { "x": 2, "y": 5, "w": 3, "h": 1 },
+    { "x": 7, "y": 3, "w": 1, "h": 4 },
+
+
+    { "x": 9, "y": 4, "w": 1, "h": 2 },
+    { "x": 9, "y": 8, "w": 1, "h": 2 },
+    { "x": 11, "y": 6, "w": 2, "h": 1 },
+
+
+    { "x": 2, "y": 10, "w": 1, "h": 3 },
+    { "x": 3, "y": 12, "w": 4, "h": 1 },
+
+    { "x": 6, "y": 8, "w": 3, "h": 1 },
+    { "x": 12, "y": 10, "w": 1, "h": 3 }
   ]
 }

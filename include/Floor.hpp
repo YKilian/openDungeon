@@ -8,7 +8,7 @@ public:
         sf::RectangleShape shape;
     };
 
-    bool load(const WorldConfig& worldConfig, const std::string& defaultFloorTexturePath, const std::vector<BiomeData>& biomes);
+    bool load(const WorldConfig& worldConfig, const LightData& lightData, const std::string& defaultFloorTexturePath, const std::vector<BiomeData>& biomes);
     void draw(sf::RenderTarget& target, const sf::RenderStates& states) const;
 
 private:

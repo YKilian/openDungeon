@@ -4,6 +4,8 @@ project(openDungeon LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(SFML_STATIC_LIBRARIES ON CACHE BOOL "Link SFML statically")
+
 include(FetchContent)
 
 FetchContent_Declare(
@@ -26,6 +28,8 @@ add_executable(openDungeon ${SOURCES})
 
 target_include_directories(openDungeon PUBLIC include)
 
+target_compile_definitions(openDungeon PUBLIC SFML_STATIC)
+
 target_link_libraries(openDungeon
         PRIVATE
         sfml-graphics
@@ -39,12 +43,9 @@ if(WIN32)
     add_custom_command(TARGET openDungeon POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E copy_if_different
             "${CMAKE_CURRENT_SOURCE_DIR}/GameMapConfig.json"
-            "$<TARGET_FILE_DIR:openDungeon>/GameMapConfig.json"
-    )
-
-    add_custom_command(TARGET openDungeon POST_BUILD
+            "${CMAKE_CURRENT_BINARY_DIR}/GameMapConfig.json"
             COMMAND ${CMAKE_COMMAND} -E copy_directory
             "${CMAKE_CURRENT_SOURCE_DIR}/assets"
-            "$<TARGET_FILE_DIR:openDungeon>/assets"
+            "${CMAKE_CURRENT_BINARY_DIR}/assets"
     )
 endif()

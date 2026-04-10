@@ -26,7 +26,6 @@ struct WorldConfig {
     static constexpr float tilePixels = 64.f;
     static constexpr int textureTilePixels = 16;
 
-    // Hilfsfunktionen für Umrechnungen
     sf::Vector2f worldPixelSize() const {
         return {tilesX * tilePixels, tilesY * tilePixels};
     }
@@ -55,6 +54,15 @@ struct BiomeData {
     std::string wallTexture;
 };
 
+struct LightData {
+    static sf::Vector2f shadowVector(const float size) { return {-18.f, size * 0.7f};};
+    inline static sf::Color topLightColor{180, 180, 200};
+    inline static sf::Color sideLightColorBase{110, 110, 140};
+    inline static sf::Color sideLightColorDark{40, 40, 60};
+    inline static sf::Color bottomShadowColorStart{20, 20, 40, 140};
+    inline static sf::Color bottomShadowColorEnd{20, 20, 40, 20};
+};
+
 struct MapData {
     WorldConfig world;
     sf::Vector2i playerStart{0, 0};
@@ -62,6 +70,7 @@ struct MapData {
     std::string defaultWallTexture = "../assets/wall.png";
     std::vector<BiomeData> biomes;
     std::vector<TileRect> walls;
+    LightData lightData;
 };
 
 struct Vec2iHash {

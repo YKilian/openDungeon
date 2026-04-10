@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Config.hpp" // Für WorldConfig
+#include "Config.hpp"
 
 class Walls;
 
@@ -14,7 +14,18 @@ public:
 
 private:
     const WorldConfig* m_worldConfig;
-    sf::CircleShape m_shape;
-    sf::Vector2f m_positionPx{0.f, 0.f};
-    float m_speedPxPerSec = 200.f;
+    sf::VertexArray m_shadow;
+    sf::Texture m_texture;
+    sf::Sprite m_sprite;
+    sf::Vector2f m_positionPixel{0.f, 0.f};
+    float m_speedPxPerSec = 150.f;
+
+    float m_animationTime = 0.f;
+    int m_animationFrame = 0;
+    int m_direction = 0;
+
+    const unsigned int m_spriteWidth = 20;
+    const unsigned int m_spriteHeight = 20;
+    const unsigned int m_frameCount = 5;
+    float m_playerScale = 2.f;
 };
